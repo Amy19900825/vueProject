@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{fullName}}
+    {{age}}
+  </div>
+  <script>
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        firstName: 'dell',
+        lastName:'jack',
+        age: 21
+      },
+      //计算属性有缓存，性能会更高
+      computed:{
+        fullName:function(){
+          console.log('计算了一次');
+          return this.firstName+'   '+this.lastName;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
